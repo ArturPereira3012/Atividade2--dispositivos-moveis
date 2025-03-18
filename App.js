@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
-import styles from "./styles"; 
-
+import styles from "./styles";
 
 const skins = [
   {
@@ -9,6 +8,7 @@ const skins = [
     nome: "AK-47 | Fire Serpent",
     qualidade: "StatTrak™",
     condição: "Minimal Wear",
+    descricao: "A lendária AK-47 Fire Serpent é altamente cobiçada pelos colecionadores de skins de CS2. Com um design tribal verde e um toque envelhecido, essa skin representa poder e resistência em campo.",
     image: require("./assets/fireserpent.png"),
   },
   {
@@ -16,6 +16,7 @@ const skins = [
     nome: "M4A4 | Howl",
     qualidade: "Factory New",
     condição: "Factory New",
+    descricao: "A M4A4 Howl é uma das skins mais icônicas do CS2, destacando-se pelo seu design agressivo de um lobo uivando em tons vibrantes de vermelho e preto. Uma skin rara e valiosa.",
     image: require("./assets/howl.png"),
   },
   {
@@ -23,6 +24,7 @@ const skins = [
     nome: "AWP | Dragon Lore",
     qualidade: "Souvenir",
     condição: "Factory New",
+    descricao: "A AWP Dragon Lore é a joia da coroa entre as skins de snipers. Seu design apresenta um majestoso dragão dourado, tornando-a uma das skins mais valiosas e desejadas do jogo.",
     image: require("./assets/dragonlore.png"),
   },
   {
@@ -30,24 +32,18 @@ const skins = [
     nome: "Desert Eagle | Blaze",
     qualidade: "StatTrak™",
     condição: "Factory New",
+    descricao: "A Desert Eagle Blaze é conhecida por seu efeito flamejante em laranja e amarelo vibrantes. Seu visual ardente faz com que seja uma escolha popular entre jogadores que apreciam estilo e impacto.",
     image: require("./assets/blaze.png"),
   },
   {
     id: "5",
-    nome: "Glock-18 | Fade",
-    qualidade: "StatTrak™",
-    condição: "Minimal Wear",
-    image: require("./assets/glockfade.png"),
-  },
-  {
-    id: "6",
     nome: "Karambit | Doppler",
     qualidade: "Factory New",
     condição: "Phase 2",
+    descricao: "A Karambit Doppler é uma das skins de faca mais desejadas, com um padrão hipnotizante em tons metálicos de azul e roxo. Seu formato curvado e letal a torna uma escolha icônica.",
     image: require("./assets/karambitdoppler.png"),
   },
 ];
-
 
 const SkinItem = ({ skin }) => {
   const [expanded, setExpanded] = useState(false);
@@ -62,6 +58,7 @@ const SkinItem = ({ skin }) => {
             <>
               <Text style={styles.details}>Qualidade: {skin.qualidade}</Text>
               <Text style={styles.details}>Condição: {skin.condição}</Text>
+              <Text style={styles.description}>Descrição: {skin.descricao}</Text>
             </>
           )}
         </View>
@@ -70,7 +67,6 @@ const SkinItem = ({ skin }) => {
   );
 };
 
-// Tela principal
 export default function App() {
   return (
     <View style={styles.container}>

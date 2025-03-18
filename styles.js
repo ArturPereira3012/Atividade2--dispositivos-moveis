@@ -36,6 +36,11 @@ export default StyleSheet.create({
   },
   details: {
     fontSize: 14,
-    color: "#ccc",
+    color: "#fff",
   },
+  description: {
+    fontSize: 14,
+    color: "#fff",
+  },
+
 });
